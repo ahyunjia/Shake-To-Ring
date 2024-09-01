@@ -52,3 +52,19 @@ enum AuthState:String {
     case restricted = "Sorry, you aren't allowed to play a multiplayer game."
 }
 
+enum NotMsg:String {
+    case shufflingCards = "Shuffling Cards..."
+    case decideOrders = "Let's play clockwise! You go %@."
+    case wrongShaker = "%@ shook!! %@ wins "
+    case correctShaker = "%@ shook their phone! "
+}
+
+//switch num:Int {
+//    case 1: "1st"
+//    case 2: "2nd"
+//    case 3: "3rd"
+//    case 4: "4th"
+//    case 5: "5th"
+//    case 6: "6th"
+//}
+

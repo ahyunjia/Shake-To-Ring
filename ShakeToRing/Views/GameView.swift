@@ -13,44 +13,19 @@ struct GameView: View {
     
     var body: some View {
         ZStack {
+            //call viewcontroller with viewcontroller wrapper
+            ShakeDetector{matchManager.shake()}
+            
             Color(.orange)
                 .edgesIgnoringSafeArea(.all)
             
             //back button to disconnect from game
             
             VStack {
-                
-                if let card = matchManager.currCard {
-                    
+                ZStack {
+                    CardView(card: $matchManager.currCard, cardEmojis: $matchManager.cardEmojis)
                     ZStack {
-                        switch card.val {
-                            
-                        case 1:
-                            OneCardView(emoji: $matchManager.cardEmojis[card.emojiId])
-                                .frame(maxHeight: .infinity)
-                        case 2:
-                            TwoCardView(emoji: $matchManager.cardEmojis[card.emojiId])
-                                .frame(maxHeight: .infinity)
-                        case 3:
-                            ThreeCardView(emoji: $matchManager.cardEmojis[card.emojiId])
-                                .frame(maxHeight: .infinity)
-                        case 4:
-                            FourCardView(emoji: $matchManager.cardEmojis[card.emojiId])
-                                .frame(maxHeight: .infinity)
-                        case 5:
-                            FiveCardView(emoji: $matchManager.cardEmojis[card.emojiId])
-                                .frame(maxHeight: .infinity)
-                        default:
-                            Text("")
-                        }
-
-                        Circle()
-                            .fill(.gray)
-                            .frame(width: 60, height: 60)
-                            .offset(x:-130, y: -150)
-                    }
-                } else {
-                    ZStack {
+                        Text(String(matchManager.localFlippedCards.count))
                         Circle()
                             .fill(.gray)
                             .frame(width: 60, height: 60)
@@ -58,14 +33,38 @@ struct GameView: View {
                     }
                 }
                 
-                Image("card_deck")
-                    .resizable()
-                    .scaledToFit()
+                ZStack {
+                    Image("card_deck")
+                        .resizable()
+                        .scaledToFit()
+                        .gesture(
+                            DragGesture()
+                                .onEnded { value in
+                                    let horizontal = value.translation.width
+                                    let vertical = value.translation.height
+                                    
+                                    if matchManager.myTurn && !matchManager.shakable && vertical < 0 && abs(vertical) > abs(horizontal) {
+                                        print("flipped")
+                                        matchManager.flipCard()
+                                    }
+                                }
+                        )
+                    ZStack {
+                        Text(String(matchManager.localRemainingCards.count))
+                        Circle()
+                            .fill(.gray)
+                            .frame(width: 60, height: 60)
+                            .offset(x:-130, y: -150)
+                    }
+                }
+    
             }.edgesIgnoringSafeArea(.bottom)
             
+            if matchManager.notifyGame {
+                GameNotificationView(msg: matchManager.notificationMsg.rawValue)
+            }
         }
     }
-    
 }
 
 

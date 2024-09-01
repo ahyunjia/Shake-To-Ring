@@ -9,23 +9,28 @@ import Foundation
 import GameKit
 
 class MatchManager: NSObject, ObservableObject {
+    
     @Published var authenticationState:AuthState = .authenticating
+    @Published var notificationMsg:NotMsg = .shufflingCards
     
     @Published var inGame = false
-    @Published var pauseGame = false
+    @Published var notifyGame = false
     @Published var isGameOver = false
     var cardEmojis = ["🍊", "🍉", "🍓", "🍈"]
     
-    var matchId: String = ""
+    var match: GKMatch?
     var localPlayer = GKLocalPlayer.local
+    var hostPlayer: GKPlayer?
+    var playersNum = 0
     var order = 0
+    var turn = 0
+    var currShaker: GKPlayer?
     
     @Published var currCard:Card?
-    var localFlippedCards = [Card]()
+    @Published var localFlippedCards = [Card]()
     @Published var localRemainingCards = [Card]()
-    var lastChance = true
     
-    var shackable = false
+    var shakable = false
     @Published var myTurn = false
     var totalFlippedCards = [0:0, 1:0, 2:0, 3:0]
     
@@ -52,7 +57,6 @@ class MatchManager: NSObject, ObservableObject {
                 if localPlayer.isMultiplayerGamingRestricted {
                     authenticationState = .restricted
                 } else {
-                    localPlayer.register(self)
                     authenticationState = .authenticated
                 }
             } else {
@@ -67,20 +71,46 @@ class MatchManager: NSObject, ObservableObject {
         request.minPlayers = 2
         request.maxPlayers = 6
         
-        let matchmakingVC = GKTurnBasedMatchmakerViewController(matchRequest: request)
-        matchmakingVC.turnBasedMatchmakerDelegate = self
-        matchmakingVC.matchmakingMode = .nearbyOnly
-        matchmakingVC.showExistingMatches = false
-        rootViewController?.present(matchmakingVC, animated: true)
-        
-//        let matchmakingVC = GKMatchmakerViewController(matchRequest: request)
-//        matchmakingVC?.matchmakerDelegate = self
-//        matchmakingVC?.matchmakingMode = .nearbyOnly
-//        rootViewController?.present(matchmakingVC!, animated: true)
+        if let matchmakingVC = GKMatchmakerViewController(matchRequest: request) {
+            matchmakingVC.matchmakerDelegate = self
+            matchmakingVC.matchmakingMode = .nearbyOnly
+            
+            rootViewController?.present(matchmakingVC, animated: true)
+        }
     }
     
-    func startGame(_ newMatch: GKTurnBasedMatch) {
-        matchId = newMatch.matchID
+    func getReadyforGame(_ newMatch: GKMatch) {
+        //set match, host of the match, distribute cards
+        print(localPlayer.gamePlayerID)
+        match = newMatch
+        playersNum = newMatch.players.count + 1
+        
+        //update ui to game and loading
+        DispatchQueue.main.async {
+            self.inGame = true
+            self.notificationMsg = .shufflingCards
+            self.notifyGame = true
+        }
+        
+        match?.delegate = self
+        match?.chooseBestHostingPlayer { host in
+            if let host = host {
+                self.hostPlayer = host
+                print(self.hostPlayer?.displayName)
+                
+                if host == self.localPlayer {
+                    self.localRemainingCards = self.distributeCards(for: self.match!)
+                    
+                    DispatchQueue.main.async {
+                        self.notificationMsg = .decideOrders
+                        //after 10seconds, turn off not
+                        self.notifyGame = false
+                        self.myTurn = true
+                    }
+                }
+            }
+        }
+        
     }
     
 }

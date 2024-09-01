@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card:Codable {
+struct Card : Codable {
     let emojiId: Int
     let val: Int
 }

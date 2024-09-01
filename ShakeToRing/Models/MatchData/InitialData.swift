@@ -8,7 +8,7 @@
 import Foundation
 
 struct InitialData : Codable {
-    var cardEmojis : [String]?
-    var order : Int?
-    var cards : [Card]?
+    let cardEmojis : [String]
+    let order : Int
+    let cards : [Card]
 }

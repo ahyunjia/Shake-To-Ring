@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80188532C63C39300BB3D9B /* MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80188522C63C39300BB3D9B /* MatchData.swift */; };
+		E804A9AB2C647E67006E8964 /* FlippedCardsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804A9AA2C647E67006E8964 /* FlippedCardsData.swift */; };
+		E804A9AD2C6A6C9D006E8964 /* ShakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804A9AC2C6A6C9D006E8964 /* ShakeData.swift */; };
+		E804A9B12C6BA8A2006E8964 /* ShakerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804A9B02C6BA8A2006E8964 /* ShakerData.swift */; };
+		E804A9B32C6BD721006E8964 /* CardsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804A9B22C6BD721006E8964 /* CardsData.swift */; };
+		E804A9B52C73363B006E8964 /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804A9B42C73363B006E8964 /* EmptyCardView.swift */; };
+		E81F9AB62C6224CE00557431 /* ShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F9AB52C6224CE00557431 /* ShakeDetector.swift */; };
+		E81F9AB82C6224FB00557431 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81F9AB72C6224FB00557431 /* CardView.swift */; };
 		E87D78002C514458008A45F9 /* TwoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D77FF2C514458008A45F9 /* TwoCardView.swift */; };
 		E87D78022C514468008A45F9 /* ThreeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D78012C514468008A45F9 /* ThreeCardView.swift */; };
 		E87D78042C51447C008A45F9 /* FourCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D78032C51447C008A45F9 /* FourCardView.swift */; };
-		E88E75732C5F493B0002DCA7 /* InitialDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E75722C5F493B0002DCA7 /* InitialDataModel.swift */; };
+		E88E75732C5F493B0002DCA7 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E75722C5F493B0002DCA7 /* InitialData.swift */; };
+		E894878D2C5FBBD2004059FE /* MatchManager+GameMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894878C2C5FBBD2004059FE /* MatchManager+GameMethods.swift */; };
+		E894878F2C5FC0E6004059FE /* MatchManager+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894878E2C5FC0E6004059FE /* MatchManager+GKMatchDelegate.swift */; };
+		E8A8EB7A2C61F40E001902CF /* GameNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A8EB792C61F40E001902CF /* GameNotificationView.swift */; };
 		E8CD45462C52AB5000897F18 /* CardDeckDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD45452C52AB5000897F18 /* CardDeckDesign.swift */; };
 		E8CD45482C58ECB700897F18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD45472C58ECB700897F18 /* Constants.swift */; };
 		E8CD454A2C58EF6E00897F18 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD45492C58EF6E00897F18 /* MatchManager.swift */; };
-		E8CD454C2C590F8100897F18 /* MatchManager+GKTurnBasedMatchmakerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD454B2C590F8100897F18 /* MatchManager+GKTurnBasedMatchmakerVCDelegate.swift */; };
-		E8CD454E2C5A125800897F18 /* GameNumberAssignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD454D2C5A125800897F18 /* GameNumberAssignView.swift */; };
+		E8CD454C2C590F8100897F18 /* MatchManager+GKmatchmakerVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD454B2C590F8100897F18 /* MatchManager+GKmatchmakerVCDelegate.swift */; };
 		E8F9B7F62C4FC3D600F9B26A /* ShakeToRingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9B7F52C4FC3D600F9B26A /* ShakeToRingApp.swift */; };
 		E8F9B7F82C4FC3D600F9B26A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9B7F72C4FC3D600F9B26A /* ContentView.swift */; };
 		E8F9B7FA2C4FC3D800F9B26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F9B7F92C4FC3D800F9B26A /* Assets.xcassets */; };
@@ -28,23 +38,32 @@
 		E8F9B8132C4FC41200F9B26A /* MyCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9B80B2C4FC41200F9B26A /* MyCardsView.swift */; };
 		E8F9B8172C50BE0B00F9B26A /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9B8162C50BE0B00F9B26A /* CardModel.swift */; };
 		E8F9B8192C50C50F00F9B26A /* OneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F9B8182C50C50F00F9B26A /* OneCardView.swift */; };
-		E8FA4B582C5A98E500F38434 /* MatchManager+GKTurnBasedEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA4B572C5A98E500F38434 /* MatchManager+GKTurnBasedEventListener.swift */; };
 		E8FA4B5A2C5BDFC600F38434 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FA4B592C5BDFC600F38434 /* Misc.swift */; };
 		E8FA4B5E2C5BE16C00F38434 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FA4B5D2C5BE16C00F38434 /* GameKit.framework */; };
 		E8FA4B602C5CA96900F38434 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FA4B5F2C5CA96900F38434 /* GameController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E80188522C63C39300BB3D9B /* MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchData.swift; sourceTree = "<group>"; };
+		E804A9AA2C647E67006E8964 /* FlippedCardsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippedCardsData.swift; sourceTree = "<group>"; };
+		E804A9AC2C6A6C9D006E8964 /* ShakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeData.swift; sourceTree = "<group>"; };
+		E804A9B02C6BA8A2006E8964 /* ShakerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakerData.swift; sourceTree = "<group>"; };
+		E804A9B22C6BD721006E8964 /* CardsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsData.swift; sourceTree = "<group>"; };
+		E804A9B42C73363B006E8964 /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
+		E81F9AB52C6224CE00557431 /* ShakeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetector.swift; sourceTree = "<group>"; };
+		E81F9AB72C6224FB00557431 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E82603082C5F8DB0009B0298 /* ShakeToRing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShakeToRing.entitlements; sourceTree = "<group>"; };
 		E87D77FF2C514458008A45F9 /* TwoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCardView.swift; sourceTree = "<group>"; };
 		E87D78012C514468008A45F9 /* ThreeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeCardView.swift; sourceTree = "<group>"; };
 		E87D78032C51447C008A45F9 /* FourCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCardView.swift; sourceTree = "<group>"; };
-		E88E75722C5F493B0002DCA7 /* InitialDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialDataModel.swift; sourceTree = "<group>"; };
+		E88E75722C5F493B0002DCA7 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
+		E894878C2C5FBBD2004059FE /* MatchManager+GameMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GameMethods.swift"; sourceTree = "<group>"; };
+		E894878E2C5FC0E6004059FE /* MatchManager+GKMatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GKMatchDelegate.swift"; sourceTree = "<group>"; };
+		E8A8EB792C61F40E001902CF /* GameNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNotificationView.swift; sourceTree = "<group>"; };
 		E8CD45452C52AB5000897F18 /* CardDeckDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckDesign.swift; sourceTree = "<group>"; };
 		E8CD45472C58ECB700897F18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E8CD45492C58EF6E00897F18 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
-		E8CD454B2C590F8100897F18 /* MatchManager+GKTurnBasedMatchmakerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GKTurnBasedMatchmakerVCDelegate.swift"; sourceTree = "<group>"; };
-		E8CD454D2C5A125800897F18 /* GameNumberAssignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNumberAssignView.swift; sourceTree = "<group>"; };
+		E8CD454B2C590F8100897F18 /* MatchManager+GKmatchmakerVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GKmatchmakerVCDelegate.swift"; sourceTree = "<group>"; };
 		E8F9B7F22C4FC3D600F9B26A /* ShakeToRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeToRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F9B7F52C4FC3D600F9B26A /* ShakeToRingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeToRingApp.swift; sourceTree = "<group>"; };
 		E8F9B7F72C4FC3D600F9B26A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +77,6 @@
 		E8F9B80B2C4FC41200F9B26A /* MyCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardsView.swift; sourceTree = "<group>"; };
 		E8F9B8162C50BE0B00F9B26A /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		E8F9B8182C50C50F00F9B26A /* OneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardView.swift; sourceTree = "<group>"; };
-		E8FA4B572C5A98E500F38434 /* MatchManager+GKTurnBasedEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GKTurnBasedEventListener.swift"; sourceTree = "<group>"; };
 		E8FA4B592C5BDFC600F38434 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		E8FA4B5D2C5BE16C00F38434 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		E8FA4B5F2C5CA96900F38434 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
@@ -78,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E804A9A92C647E28006E8964 /* MatchData */ = {
+			isa = PBXGroup;
+			children = (
+				E80188522C63C39300BB3D9B /* MatchData.swift */,
+				E88E75722C5F493B0002DCA7 /* InitialData.swift */,
+				E804A9AA2C647E67006E8964 /* FlippedCardsData.swift */,
+				E804A9AC2C6A6C9D006E8964 /* ShakeData.swift */,
+				E804A9B02C6BA8A2006E8964 /* ShakerData.swift */,
+				E804A9B22C6BD721006E8964 /* CardsData.swift */,
+			);
+			path = MatchData;
+			sourceTree = "<group>";
+		};
 		E8F9B7E92C4FC3D600F9B26A = {
 			isa = PBXGroup;
 			children = (
@@ -128,9 +159,10 @@
 				E8F9B8062C4FC41100F9B26A /* MenuView.swift */,
 				E8F9B80B2C4FC41200F9B26A /* MyCardsView.swift */,
 				E8F9B8092C4FC41200F9B26A /* GameView.swift */,
+				E81F9AB52C6224CE00557431 /* ShakeDetector.swift */,
 				E8F9B8082C4FC41200F9B26A /* GameOverView.swift */,
 				E8F9B8042C4FC41100F9B26A /* GameResultView.swift */,
-				E8CD454D2C5A125800897F18 /* GameNumberAssignView.swift */,
+				E8A8EB792C61F40E001902CF /* GameNotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +175,8 @@
 				E87D78012C514468008A45F9 /* ThreeCardView.swift */,
 				E87D77FF2C514458008A45F9 /* TwoCardView.swift */,
 				E8F9B8182C50C50F00F9B26A /* OneCardView.swift */,
+				E81F9AB72C6224FB00557431 /* CardView.swift */,
+				E804A9B42C73363B006E8964 /* EmptyCardView.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -150,9 +184,9 @@
 		E8F9B8152C50BDF700F9B26A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E804A9A92C647E28006E8964 /* MatchData */,
 				E8F9B8162C50BE0B00F9B26A /* CardModel.swift */,
 				E8CD45452C52AB5000897F18 /* CardDeckDesign.swift */,
-				E88E75722C5F493B0002DCA7 /* InitialDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,8 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				E8CD45492C58EF6E00897F18 /* MatchManager.swift */,
-				E8CD454B2C590F8100897F18 /* MatchManager+GKTurnBasedMatchmakerVCDelegate.swift */,
-				E8FA4B572C5A98E500F38434 /* MatchManager+GKTurnBasedEventListener.swift */,
+				E8CD454B2C590F8100897F18 /* MatchManager+GKmatchmakerVCDelegate.swift */,
+				E894878C2C5FBBD2004059FE /* MatchManager+GameMethods.swift */,
+				E894878E2C5FC0E6004059FE /* MatchManager+GKMatchDelegate.swift */,
 			);
 			path = MatchManager;
 			sourceTree = "<group>";
@@ -247,26 +282,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F9B8102C4FC41200F9B26A /* GameOverView.swift in Sources */,
+				E804A9AD2C6A6C9D006E8964 /* ShakeData.swift in Sources */,
 				E87D78002C514458008A45F9 /* TwoCardView.swift in Sources */,
 				E8F9B80E2C4FC41200F9B26A /* MenuView.swift in Sources */,
 				E87D78022C514468008A45F9 /* ThreeCardView.swift in Sources */,
-				E8CD454E2C5A125800897F18 /* GameNumberAssignView.swift in Sources */,
+				E80188532C63C39300BB3D9B /* MatchData.swift in Sources */,
 				E8CD45462C52AB5000897F18 /* CardDeckDesign.swift in Sources */,
+				E894878D2C5FBBD2004059FE /* MatchManager+GameMethods.swift in Sources */,
 				E8CD454A2C58EF6E00897F18 /* MatchManager.swift in Sources */,
 				E8CD45482C58ECB700897F18 /* Constants.swift in Sources */,
 				E8F9B8132C4FC41200F9B26A /* MyCardsView.swift in Sources */,
 				E8F9B8192C50C50F00F9B26A /* OneCardView.swift in Sources */,
-				E8FA4B582C5A98E500F38434 /* MatchManager+GKTurnBasedEventListener.swift in Sources */,
 				E8F9B7F82C4FC3D600F9B26A /* ContentView.swift in Sources */,
-				E8CD454C2C590F8100897F18 /* MatchManager+GKTurnBasedMatchmakerVCDelegate.swift in Sources */,
-				E88E75732C5F493B0002DCA7 /* InitialDataModel.swift in Sources */,
+				E8CD454C2C590F8100897F18 /* MatchManager+GKmatchmakerVCDelegate.swift in Sources */,
+				E88E75732C5F493B0002DCA7 /* InitialData.swift in Sources */,
+				E894878F2C5FC0E6004059FE /* MatchManager+GKMatchDelegate.swift in Sources */,
 				E8F9B80C2C4FC41200F9B26A /* GameResultView.swift in Sources */,
 				E8F9B8172C50BE0B00F9B26A /* CardModel.swift in Sources */,
+				E804A9B32C6BD721006E8964 /* CardsData.swift in Sources */,
 				E8F9B80D2C4FC41200F9B26A /* FiveCardView.swift in Sources */,
+				E8A8EB7A2C61F40E001902CF /* GameNotificationView.swift in Sources */,
 				E87D78042C51447C008A45F9 /* FourCardView.swift in Sources */,
+				E804A9AB2C647E67006E8964 /* FlippedCardsData.swift in Sources */,
 				E8FA4B5A2C5BDFC600F38434 /* Misc.swift in Sources */,
 				E8F9B7F62C4FC3D600F9B26A /* ShakeToRingApp.swift in Sources */,
 				E8F9B8112C4FC41200F9B26A /* GameView.swift in Sources */,
+				E81F9AB82C6224FB00557431 /* CardView.swift in Sources */,
+				E804A9B12C6BA8A2006E8964 /* ShakerData.swift in Sources */,
+				E804A9B52C73363B006E8964 /* EmptyCardView.swift in Sources */,
+				E81F9AB62C6224CE00557431 /* ShakeDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
